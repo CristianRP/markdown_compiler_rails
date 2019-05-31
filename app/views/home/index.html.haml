@@ -7,10 +7,11 @@
   %body
     %nav.light-blue.lighten-1{:role => "navigation"}
       .nav-wrapper.container
-        %a#logo-container.brand-logo{:href => "#"} Logo
+        %a#logo-container.brand-logo{:href => "#"} Compilador de Markdown
         %ul.right.hide-on-med-and-down
           %li
-            %a{:href => "#"} Navbar Link
+            %a{:href => "https://github.com/CristianRP/markdown_compiler_rails", target: '_blank'}
+              %span Github
         %ul#nav-mobile.sidenav
           %li
             %a{:href => "#"} Navbar Link
@@ -21,73 +22,25 @@
         .row
           .col.m6
             = render 'markdown_card'
+          .col.m6#colAst{hidden: true}
+            = render 'ast'
+        .row#rowSimbolCode{hidden: true}
           .col.m6
             = render 'simbol_table'
-          .col-m6
-            = render 'ast'
-      .container
-        %br/
-        %br/
-        %h1.header.center.orange-text Starter Template
-        .row.center
-          %h5.header.col.s12.light A modern responsive front-end framework based on Material Design
-        .row.center
-          %a#download-button.btn-large.waves-effect.waves-light.orange{:href => "http://materializecss.com/getting-started.html"} Get Started
-        %br/
-        %br/
-    .container
-      .section
-        / Icon Section
-        .row
-          .col.s12.m4
-            .icon-block
-              %h2.center.light-blue-text
-                %i.material-icons flash_on
-              %h5.center Speeds up development
-              %p.light We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
-          .col.s12.m4
-            .icon-block
-              %h2.center.light-blue-text
-                %i.material-icons group
-              %h5.center User Experience Focused
-              %p.light By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
-          .col.s12.m4
-            .icon-block
-              %h2.center.light-blue-text
-                %i.material-icons settings
-              %h5.center Easy to work with
-              %p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
+          .col.m6
+            = render 'generated_code'
+            = render 'executed_code'
       %br/
       %br/
     %footer.page-footer.orange
       .container
         .row
           .col.l6.s12
-            %h5.white-text Company Bio
-            %p.grey-text.text-lighten-4 We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.
+            %h5.white-text Compiladores
+            %p.grey-text.text-lighten-4 Proyecto final del curso de compiladores de la Universidad Mariano Gálvez de Guatemala. Desarrollado con Ruby on Rails.
           .col.l3.s12
-            %h5.white-text Settings
-            %ul
-              %li
-                %a.white-text{:href => "#!"} Link 1
-              %li
-                %a.white-text{:href => "#!"} Link 2
-              %li
-                %a.white-text{:href => "#!"} Link 3
-              %li
-                %a.white-text{:href => "#!"} Link 4
           .col.l3.s12
-            %h5.white-text Connect
-            %ul
-              %li
-                %a.white-text{:href => "#!"} Link 1
-              %li
-                %a.white-text{:href => "#!"} Link 2
-              %li
-                %a.white-text{:href => "#!"} Link 3
-              %li
-                %a.white-text{:href => "#!"} Link 4
       .footer-copyright
         .container
-          Made by
+          Made with
           %a.orange-text.text-lighten-3{:href => "http://materializecss.com"} Materialize

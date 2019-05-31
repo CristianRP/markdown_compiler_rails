@@ -8,6 +8,12 @@ $(function() {
         console.log(data);
         buildTable(data.token_list);
         buildAst(data.ast); 
+        addCodeToP(data.value);
+        $('#colAst').show();
+        $('#rowSimbolCode').show();
+    }).fail(function(data) {
+      alert('Error de sintaxis');
+      //console.log(data);
     });
   });
 
@@ -18,14 +24,22 @@ $(function() {
     }).join());
   }
 
-  function buildAst(ast) {
+  function buildAst(ast) { 
     var data = [];
-    $.each(ast, function(obj, idx) {
-      console.log(obj);
+    console.log(ast.paragraphs[0].sentences)
+    $.each(ast.paragraphs[0].sentences, function(obj, value) {
+      console.log(value.type);
+      var arr = { name: obj, children: [{name: value.type, children: [{name: value.value}]}] }
+      data.push(arr);
     });
+    console.log(data);
     $('#tree1').tree({
       data: data
     });
   }
 
+  function addCodeToP(code) {
+    $('#paragraph').text(code);
+    $('#paragraphCode').append(code);
+  }
 });

@@ -180,3 +180,15 @@ span.jqtree-dragging {
   cursor: pointer;
   padding: 2px 8px;
 }
+
+pre{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  margin-bottom: 10px;
+  overflow: auto;
+  width: auto;
+  padding: 5px;
+  background-color: #000000;
+  width: auto;
+  padding-bottom: 20px;
+  max-height: 600px;
+}
