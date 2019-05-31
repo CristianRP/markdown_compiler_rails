@@ -1,0 +1,11 @@
+.card.blue-grey.darken-1
+  %form
+    .card-content.white-text
+      %span.card-title Ingrese su texto Markdown
+      %form.container.col.s12
+        .row
+          .input-field.col.s12
+            %textarea#markdownTxt.materialize-textarea{style: 'height: 10rem;'}
+            %label{:for => "textarea1"} Markdown
+    .card-action
+      %button#btnCompilar.btn.waves-effect.waves-light Compilar
